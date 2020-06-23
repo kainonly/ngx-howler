@@ -18,7 +18,7 @@ describe('NgxHowlerService', () => {
 
   it('should be register', (done) => {
     service.register('dev', {
-      src: ['https://cdn.vfeng.me/static/sound/new-task.mp3'],
+      src: ['https://cdn.kainonly.com/sound/new-task.mp3'],
       html5: true
     }).subscribe(status => {
       expect(status).toBeTruthy();
