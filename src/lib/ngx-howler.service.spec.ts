@@ -1,12 +1,38 @@
 import { TestBed } from '@angular/core/testing';
-
 import { NgxHowlerService } from './ngx-howler.service';
 
 describe('NgxHowlerService', () => {
-  beforeEach(() => TestBed.configureTestingModule({}));
+  let service: NgxHowlerService;
 
-  it('should be created', () => {
-    const service: NgxHowlerService = TestBed.get(NgxHowlerService);
-    expect(service).toBeTruthy();
+  beforeEach(() => {
+    if (!service) {
+      TestBed.configureTestingModule({
+        providers: [
+          NgxHowlerService
+        ]
+      });
+      service = TestBed.get(NgxHowlerService);
+      service.loadScript('https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.0/howler.min.js');
+    }
+  });
+
+  it('should be register', (done) => {
+    service.register('dev', {
+      src: ['https://cdn.vfeng.me/static/sound/new-task.mp3'],
+      html5: true
+    }).subscribe(status => {
+      expect(status).toBeTruthy();
+      done();
+    });
+  });
+
+  it('should be play', () => {
+    const result = service.get('dev').play();
+    expect(result).not.toBeNull();
+  });
+
+  it('should be unregister', () => {
+    const result = service.unregister('dev');
+    expect(result).toBeTruthy();
   });
 });

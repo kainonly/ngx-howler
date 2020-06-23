@@ -1,8 +1,30 @@
 {
   "name": "ngx-howler",
-  "version": "0.0.1",
+  "description": "Audio library based on howler.js for Angular",
+  "version": "8.0.0",
   "peerDependencies": {
-    "@angular/common": "^8.2.14",
-    "@angular/core": "^8.2.14"
+    "@angular/common": "^8.0.0",
+    "@angular/core": "^8.0.0"
+  },
+  "devDependencies": {
+    "@types/howler": "^2.2.0"
+  },
+  "keywords": [
+    "angular",
+    "howler",
+    "ngx-howler"
+  ],
+  "author": {
+    "name": "kain",
+    "email": "zhangtqx@vip.qq.com"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/kainonly/ngx-howler",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kainonly/ngx-howler.git"
+  },
+  "bugs": {
+    "url": "https://github.com/kainonly/ngx-howler/issues"
   }
 }
