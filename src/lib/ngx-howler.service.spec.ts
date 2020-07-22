@@ -1,5 +1,5 @@
 import { TestBed } from '@angular/core/testing';
-import { NgxHowlerService } from './ngx-howler.service';
+import { NgxHowlerService } from 'ngx-howler';
 
 describe('NgxHowlerService', () => {
   let service: NgxHowlerService;
@@ -11,7 +11,7 @@ describe('NgxHowlerService', () => {
           NgxHowlerService
         ]
       });
-      service = TestBed.get(NgxHowlerService);
+      service = TestBed.inject(NgxHowlerService);
       service.loadScript('https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.0/howler.min.js');
     }
   });
