@@ -1,0 +1,35 @@
+/* You can add global styles to this file, and also import other style files */
+.control-panel {
+  margin-bottom: 12px;
+
+  [nz-button] {
+    margin-right: 8px;
+  }
+}
+
+.sub-panel {
+  padding-top: 12px;
+
+  [nz-button] {
+    margin-right: 8px;
+  }
+}
+
+html body.swal2-height-auto {
+  height: 100% !important;
+  padding-right: 0 !important;
+}
+
+.ant-card-bordered {
+  border: none;
+}
+
+nz-form-item {
+  [nz-button] {
+    margin-right: 8px;
+  }
+}
+
+.ant-tag {
+  margin-bottom: 8px;
+}
