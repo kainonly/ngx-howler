@@ -13,7 +13,7 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     this.howler.register('dev', {
-      src: ['https://cdn.kainonly.com/sound/ding-dong.mp3'],
+      src: ['https://cdn.kainonly.com/sound/ping.mp3'],
       html5: true
     }).subscribe(status => {
       // ok

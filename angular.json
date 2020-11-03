@@ -118,5 +118,8 @@
       }
     }
   },
-  "defaultProject": "ngx-howler-case"
+  "defaultProject": "ngx-howler-case",
+  "cli": {
+    "analytics": false
+  }
 }
