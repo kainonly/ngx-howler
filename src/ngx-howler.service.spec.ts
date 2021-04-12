@@ -1,5 +1,5 @@
 import { TestBed } from '@angular/core/testing';
-import { NgxHowlerService } from 'ngx-howler';
+import { NgxHowlerService } from './ngx-howler.service';
 
 describe('NgxHowlerService', () => {
   let service: NgxHowlerService;
