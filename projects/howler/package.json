@@ -1,0 +1,33 @@
+{
+  "name": "ngx-howler",
+  "version": "22.2.0",
+  "peerDependencies": {
+    "@angular/common": "^22.2.0",
+    "@angular/core": "^22.2.0",
+    "howler": "^2.2.0"
+  },
+  "dependencies": {
+    "@types/howler": "^2.2.13",
+    "tslib": "^2.3.0"
+  },
+  "sideEffects": false,
+  "description": "Audio library based on howler.js for Angular (zoneless, lazy-loaded)",
+  "license": "MIT",
+  "author": "kainonly",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kainonly/ngx-howler.git"
+  },
+  "homepage": "https://github.com/kainonly/ngx-howler#readme",
+  "bugs": {
+    "url": "https://github.com/kainonly/ngx-howler/issues"
+  },
+  "keywords": [
+    "angular",
+    "howler",
+    "howler.js",
+    "audio",
+    "zoneless",
+    "ngx-howler"
+  ]
+}

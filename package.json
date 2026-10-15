@@ -1,31 +1,37 @@
 {
   "name": "ngx-howler",
-  "description": "Audio library based on howler.js for Angular",
-  "version": "11.0.0",
-  "peerDependencies": {
-    "@angular/common": "^11.0.0",
-    "@angular/core": "^11.0.0"
+  "version": "22.2.0",
+  "private": true,
+  "packageManager": "npm@12.0.2",
+  "scripts": {
+    "build": "ng build howler --configuration production",
+    "watch": "ng build howler --watch --configuration development",
+    "test": "npm run build && ng test howler --watch=false && ng test demo --watch=false",
+    "check": "tsc --noEmit -p projects/howler/tsconfig.lib.json",
+    "format:check": "prettier --check projects scripts src",
+    "pack": "npm run build && npm pack ./dist/howler --pack-destination ./dist",
+    "check:package": "npm run pack && node scripts/check-package.mjs",
+    "demo": "npm run build && ng serve demo",
+    "demo:build": "npm run build && ng build demo --configuration production"
   },
   "dependencies": {
-    "@types/howler": "^2.2.1",
-    "tslib": "^2.0.0"
+    "@angular/common": "^22.2.0",
+    "@angular/compiler": "^22.2.0",
+    "@angular/core": "^22.2.0",
+    "@angular/platform-browser": "^22.2.0",
+    "howler": "^2.2.4",
+    "rxjs": "~7.8.0",
+    "tslib": "^2.3.0"
   },
-  "keywords": [
-    "angular",
-    "howler",
-    "ngx-howler"
-  ],
-  "author": {
-    "name": "kain",
-    "email": "zhangtqx@vip.qq.com"
-  },
-  "license": "MIT",
-  "homepage": "https://github.com/kainonly/ngx-howler",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/kainonly/ngx-howler.git"
-  },
-  "bugs": {
-    "url": "https://github.com/kainonly/ngx-howler/issues"
+  "devDependencies": {
+    "@angular/build": "^22.2.2",
+    "@angular/cli": "^22.2.2",
+    "@angular/compiler-cli": "^22.2.0",
+    "@types/howler": "^2.2.13",
+    "jsdom": "^30.0.0",
+    "ng-packagr": "^22.2.0",
+    "prettier": "^3.8.1",
+    "typescript": "~6.0.2",
+    "vitest": "^5.0.0"
   }
 }

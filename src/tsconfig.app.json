@@ -1,0 +1,9 @@
+{
+  "extends": "../tsconfig.json",
+  "compilerOptions": {
+    "outDir": "../out-tsc/demo",
+    "module": "preserve"
+  },
+  "files": ["main.ts"],
+  "include": ["**/*.d.ts"]
+}

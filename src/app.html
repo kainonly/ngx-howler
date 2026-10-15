@@ -1,0 +1,82 @@
+<main class="panel">
+  <h1>ngx-howler 示例</h1>
+  <p class="hint">
+    音频由运行时生成的正弦波 WAV 提供（无外部文件依赖），howler 引擎在首次注册时惰性加载。
+  </p>
+
+  <section>
+    <h2>注册音频</h2>
+    <div class="row">
+      @for (tone of tones; track tone.id) {
+        <button type="button" [disabled]="busy() || isRegistered(tone.id)" (click)="register(tone)">
+          {{ isRegistered(tone.id) ? '已注册 ' + tone.label : '注册 ' + tone.label }}
+        </button>
+      }
+    </div>
+  </section>
+
+  @if (registered().length > 0) {
+    <section>
+      <h2>选择与控制</h2>
+      <div class="row">
+        @for (id of registered(); track id) {
+          <button type="button" [class.active]="activeId() === id" (click)="select(id)">
+            {{ id }}
+          </button>
+        }
+      </div>
+
+      <div class="controls">
+        <button type="button" [disabled]="!canControl()" (click)="play()">播放</button>
+        <button type="button" [disabled]="!canControl()" (click)="pause()">暂停</button>
+        <button type="button" [disabled]="!canControl()" (click)="stop()">停止</button>
+
+        <label>
+          音量 {{ volume() }}
+          <input
+            type="range"
+            min="0"
+            max="1"
+            step="0.1"
+            [value]="volume()"
+            (input)="setVolume($any($event.target).valueAsNumber)"
+          />
+        </label>
+
+        <label>
+          速率
+          <select [value]="rate()" (change)="setRate($any($event.target).valueAsNumber)">
+            <option value="0.5">0.5x</option>
+            <option value="1">1x</option>
+            <option value="2">2x</option>
+          </select>
+        </label>
+
+        <label class="loop">
+          <input type="checkbox" [checked]="loop()" (change)="toggleLoop()" />
+          循环
+        </label>
+      </div>
+
+      <div class="row">
+        <button type="button" [disabled]="!canControl()" (click)="unregisterActive()">
+          注销 {{ activeId() }}
+        </button>
+        <button type="button" [disabled]="registered().length === 0" (click)="unregisterAll()">
+          注销全部
+        </button>
+      </div>
+    </section>
+  }
+
+  @if (logs().length > 0) {
+    <section>
+      <h2>事件日志</h2>
+      <ul class="logs">
+        @for (entry of logs(); track $index) {
+          <li>{{ entry }}</li>
+        }
+      </ul>
+    </section>
+  }
+</main>
